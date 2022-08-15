@@ -7,11 +7,10 @@ Made by Ayosa Facundo
 ### Libraries:
 
 * [React](https://github.com/facebook/react)
-* [Tailwind](https://tailwindcss.com/docs/installation)
 
 ### API's
 
 * [AnimeChan](https://animechan.vercel.app/)
 
 
-#### Part of the FreeCodeCamp Course
+#### As a part of the FreeCodeCamp Course

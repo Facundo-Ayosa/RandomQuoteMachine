@@ -4,42 +4,43 @@ import fetchquote from './fetch-quotes';
 import quotes from './img/doubleQuotes.svg'
 
 function App() {
-  const [quote, setQuote] = useState({
-		"quote": "Lend me 100 yen since I'm beautiful.",
-		"character": "Aisa Himegami",
-		"anime": "Toaru Majutsu no Index"
-  });
-  const [cardStatus, setCardStatus] = useState("active")
-  //const clickHandler = () => {}
-  const fetcher = async () => {
-    setCardStatus("inactive");
+  const [quote, setQuote] = useState();
+  var refreshed = false;
+  const clickHandler = () => {
+    let elem = document.getElementById("active");
+    if (!(elem === null)) {
+      elem.id = "inactive"
+    }
     setTimeout(()=>{
-      setCardStatus("active");
-    },900);
-    await fetchquote().then((res) => {
-      if(res.quote.length > 150) {
-        fetcher()
-      } else {
-        setQuote(res);
+      if (!(elem === null)) {
+        elem.id = "active"
       }
+    },900);
+    fetcher()
+  }
+  const fetcher = async () => {
+    await fetchquote().then((res) => {
+        setQuote(res);
     });
+    refreshed = !refreshed;
   }
   useEffect(() => {
-    if (!quote) {
+    if ((quote === undefined && !refreshed)) {
       fetcher();
+      refreshed = !refreshed
     }
   })
   return (
-    <div className="card">
+    <div className="card" id="quotebox">
       <img src={quotes} id="cardimg" alt=""/>
-      <div id="quotecontainer" className={cardStatus}>
-        <h2 className="quote">{quote ? quote.quote : ""}</h2>
-        <h3 className="character">{quote ? ` - ${quote.character}` : ""}</h3>
+      <div id="active">
+        <h2 className="quote" id="text">{quote ? quote.quote : ""}</h2>
+        <h3 className="character" id="author">{quote ? ` - ${quote.character}` : ""}</h3>
         <h3 className="anime">{quote ? quote.anime : ""}</h3>
       </div>
       <div className="links">
-        {/* Tweet Link */}
-        <button className="btn" onClick={fetcher}>Get Another Quote</button>
+        <a id="tweet-quote" href={quote ? quote.tweetURL : ""} target="_blank" rel="noreferrer">Tweet it!</a>
+        <button id="new-quote" className="btn" onClick={clickHandler}>Get Another Quote</button>
       </div>
     </div>
   );

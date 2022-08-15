@@ -42,7 +42,7 @@
   }
 }
 
-#quotecontainer {
+#quotebox {
   display: flex;
   flex-direction: column;
 }
@@ -62,7 +62,18 @@
 }
 .links {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#tweet-quote {
+  padding: 10px;
+  background-color: #1DA1F2;
+  color: #F5F8FA;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  height: fit-content;
+  text-decoration: none;
 }
 .btn {
   border: 4px solid rgba(68,68,68,0.3);
@@ -82,14 +93,14 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.active {
+#active {
   -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 1s; /* Firefox < 16 */
   -ms-animation: fadein 1s; /* Internet Explorer */
   -o-animation: fadein 1s; /* Opera < 12.1 */
   animation: fadein 1s;
 }
-.inactive {
+#inactive {
   -webkit-animation: fadeout 1s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadeout 1s; /* Firefox < 16 */
   -ms-animation: fadeout 1s; /* Internet Explorer */
