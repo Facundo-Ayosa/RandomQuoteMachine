@@ -1,15 +1,160 @@
-main {
+#root {
   width: 100vw;
   height: 100vh;
   background-color: #282c34;
+  display: flex;
 }
 
-.quote {
-  min-height: 100vh;
+@media (orientation: portrait) {
+  .card {
+    width: calc(100vw - 25px);
+    height: 75vh;
+    min-height: fit-content;
+    background-color: #DDD;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .quote {
+    text-align: justify;
+    margin-bottom: 15px;
+  }
+}
+@media (orientation: landscape){
+  .card {
+    width: 65vw;
+    background-color: #DDD;
+    height: 45vh;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  }
+  .quote {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
+
+#quotecontainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.character {
+  text-align: right;
+  color: #444;
+}
+.anime {
+  text-align: right;
+  color: #444;
+  font-size: 1.5rem;
+}
+
+#cardimg {
+  position: relative;
+  width: 150px;
+}
+.links {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.btn {
+  border: 4px solid rgba(68,68,68,0.3);
+  border-radius: 15px;
+  background-color: #444;
+  color: #EEE;
+  margin: 15px;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: all 0.25s;
+}
+.btn:active{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+.btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.active {
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1s; /* Firefox < 16 */
+  -ms-animation: fadein 1s; /* Internet Explorer */
+  -o-animation: fadein 1s; /* Opera < 12.1 */
+  animation: fadein 1s;
+}
+.inactive {
+  -webkit-animation: fadeout 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeout 1s; /* Firefox < 16 */
+  -ms-animation: fadeout 1s; /* Internet Explorer */
+  -o-animation: fadeout 1s; /* Opera < 12.1 */
+  animation: fadeout 1s;
+}
+
+/* fade in animation */
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* fade out animation */
+
+@keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
 }
