@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Random Anime Quote Machine",
+  "name": "Random Quote Machine made by React JS",
   "icons": [
     {
       "src": "favicon.ico",
