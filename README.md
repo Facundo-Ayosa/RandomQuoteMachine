@@ -1,7 +1,7 @@
 # Random Anime Quote Machine
 
 Made by Ayosa Facundo  
-[You can see a preview here](https://facundo-ayosa.github.io/RandomQuoteMachine/)
+[You can see a preview here](https://ayosafacundo.github.io/RandomQuoteMachine/)
 
 ## This project was created using these libraries and API's
 
